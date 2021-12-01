@@ -45,7 +45,7 @@ cas client应用插件demo。
 
 ![cas-auth](relation/cas-auth-filter.jpg)
 
-**CAS Validation Filter**。
+**CAS Validation Filter**
 
 ![cas-validation](relation/cas-validation-filter.jpg)
 
