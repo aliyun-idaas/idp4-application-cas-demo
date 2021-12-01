@@ -33,7 +33,7 @@
             <p class="navbar-text">CAS-Client</p>
 
             <form action="${contextPath}/signout" class="navbar-form navbar-right" role="search" method="post"
-                  onsubmit="return confirm('确认全局退出?(IDP认证平台将同时退出, 当使用统一登录界面时有效)')">
+                  onsubmit="return confirm('确认全局退出? (通过同一个浏览器同时登录的其他CAS Client端应用也会退出)')">
                 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                 <input type="hidden" name="force" value="true"/>
                 <button type="submit" class="btn btn-warning">全局退出</button>
