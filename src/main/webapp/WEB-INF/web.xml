@@ -89,7 +89,7 @@
             <param-name>casServerUrlPrefix</param-name>
             <!-- 配置值来自 CAS应用的 详细 页面 'CAS Validation URL Prefix' -->
             <param-value>
-                https://sz.idp4.idsmanager.com/enduser/api/application/plugin_cas_apereo/szplugin_cas_apereo/login
+                https://sz.idp4.idsmanager.com/public/api/application/plugin_cas_apereo/szplugin_cas_apereo/serviceValidate
             </param-value>
         </init-param>
         <init-param>
