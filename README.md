@@ -34,9 +34,22 @@ cas client应用插件demo。
 
 复制准备好以上信息，需要在下一步中配置到idp4-application-cas-demo中。
 
-6. 打开 src/main/resources目录中 cas-client.properties 文件，将 CAS Logout URL 复制配置在里面（property: cas.logout.url）。
-7. 打开 src/main/webapp/WEB-INF/web.xml 文件，根据里面提示，依次配置里面的
-**CAS Single Sign Out Filter**，**CAS Authentication Filter**与**CAS Validation Filter**。
+6. 打开 src/main/resources目录中 [cas-client.properties](src/main/resources/cas-client.properties) 文件，将 CAS Logout URL 复制配置在里面（property: cas.logout.url）。
+7. 打开 src/main/webapp/WEB-INF/[web.xml](src/main/webapp/WEB-INF/web.xml) 文件，根据里面提示，依次配置里面的
+
+**CAS Single Sign Out Filter**
+
+![cas-logout](relation/cas-logout-filter.jpg)
+
+**CAS Authentication Filter**
+
+![cas-auth](relation/cas-auth-filter.jpg)
+
+**CAS Validation Filter**。
+
+![cas-validation](relation/cas-validation-filter.jpg)
+
+
 8. 部署工程并启动Tomcat，访问 http://localhost:8080/idp4-application-cas-demo 即可。
    
 
