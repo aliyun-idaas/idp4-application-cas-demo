@@ -1,6 +1,6 @@
-package com.idsmanager.casclient.service.impl;
+package com.idsmanager.demo.casclient.service.impl;
 
-import com.idsmanager.casclient.service.IndexService;
+import com.idsmanager.demo.casclient.service.IndexService;
 import org.springframework.stereotype.Service;
 
 /**

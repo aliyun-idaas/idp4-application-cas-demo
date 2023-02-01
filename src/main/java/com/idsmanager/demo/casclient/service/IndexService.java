@@ -1,4 +1,4 @@
-package com.idsmanager.casclient.service;
+package com.idsmanager.demo.casclient.service;
 
 /**
  * 2016/1/22

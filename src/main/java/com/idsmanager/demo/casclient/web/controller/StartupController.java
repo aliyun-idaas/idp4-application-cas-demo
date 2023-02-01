@@ -1,11 +1,12 @@
-package com.idsmanager.casclient.web.controller;
+package com.idsmanager.demo.casclient.web.controller;
 
-import com.idsmanager.casclient.infrastructure.JzytConstants;
+import com.idsmanager.demo.casclient.config.CasProperties;
+import com.idsmanager.demo.casclient.infrastructure.JzytConstants;
 import org.jasig.cas.client.util.AbstractCasFilter;
 import org.jasig.cas.client.validation.Assertion;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,25 +27,13 @@ public class StartupController {
     private static final Logger LOG = LoggerFactory.getLogger(StartupController.class);
 
 
-    /**
-     * CAS logout url
-     * 来自 cas-client.properties
-     */
-    @Value("#{properties['cas.logout.url']}")
-    private String casLogoutUrl;
-
-
-    /**
-     * CAS services
-     * 来自 cas-client.properties
-     */
-    @Value("#{properties['cas.service']}")
-    private String casService;
+    @Autowired
+    private CasProperties casProperties;
 
 
     /*
-    * CAS 登录成功后的页面， 显示 信息
-    * */
+     * CAS 登录成功后的页面， 显示 信息
+     * */
     @RequestMapping(value = {"/index", "/"})
     public String dashboard(Model model, HttpServletRequest request) {
         //获取   CAS  Assertion
@@ -68,7 +57,7 @@ public class StartupController {
     public String signout(HttpServletRequest request, boolean force) throws Exception {
         request.getSession().invalidate();
         //组装退出跳转到 idaas 中
-        String url = casLogoutUrl + "?service=" + URLEncoder.encode(casService, JzytConstants.ENCODING) + "&force=" + force;
+        String url = casProperties.getLogoutUrl() + "?service=" + URLEncoder.encode(casProperties.getService(), JzytConstants.ENCODING) + "&force=" + force;
         if (LOG.isDebugEnabled()) {
             LOG.debug("{}|Redirect to CAS Logout URL: {}", request.getSession().getId(), url);
         }
